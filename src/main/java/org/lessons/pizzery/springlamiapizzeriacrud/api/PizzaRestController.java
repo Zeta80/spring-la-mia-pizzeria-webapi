@@ -30,7 +30,6 @@ public class PizzaRestController {
     @Autowired
     private PizzaService pizzaService;
 
-    // lista di tutti i books
     @GetMapping
     public List<Pizza> list(@RequestParam(name = "q") Optional<String> search) {
         if (search.isPresent()) {
@@ -48,14 +47,12 @@ public class PizzaRestController {
         }
     }
 
-    // create book
     @PostMapping
     public Pizza create(@Valid @RequestBody Pizza pizza) {
 
         return pizzaService.createPizza(pizza);
     }
 
-    // update book
     @PutMapping("/{id}")
     public Pizza update(@PathVariable Integer id, @Valid @RequestBody Pizza pizza) {
         try {
@@ -79,8 +76,6 @@ public class PizzaRestController {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND);
         }
     }
-
-
     @GetMapping("/{id}/offers")
     public List<Offer> getBookBorrowings(@PathVariable("id") Integer pizzaId) {
         Pizza pizza = null;

@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:replace="/fragments/resources :: head"></th:block>
+    <link rel="stylesheet" href="/webjars/bootstrap/5.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" th:href="@{/webjars/font-awesome/6.3.0/css/all.min.css}">
+    <title>pizze</title>
+</head>
+<body>
+
+<div th:replace="~{fragments/navbar :: navbar}"></div>
+<div class="container">
+<h1>pizze</h1>
+<h1>Elenco Pizze</h1>
+
+
+<h2>Hey metti una tua pizza dai :D  <a th:href="@{/pizzas/create}" class="btn btn-success rounded-circle" title="add book">CREAMI</a></h2>
+
+    <table class="table">
+    <thead>
+    <tr>
+        <th>id</th>
+        <th>Nome</th>
+        <th>Descrizione</th>
+        <th>Prezzo</th>
+        <th></th>
+    </tr>
+    </thead>
+
+        <tbody>
+        <tr th:if="${!list.isEmpty()}" th:each="pizza : ${list}" th:object="${pizza}">
+            <td th:text="*{id}"></td>
+            <td th:text="*{nome}"></td>
+            <td th:text="*{descrizione}"></td>
+            <td th:text="*{prezzo}"></td>
+            <td>
+                <a th:href="@{|/pizzas/*{id}|}" class="btn btn-primary btn-sm" title="detail">Detail</a>
+                <a th:href="@{|/pizzas/edit/*{id}|}" class="btn btn-primary btn-sm" title="edit">Edit</a>
+                <a
+                        th:if="${pizza.offers == null || pizza.offers.size() == 0}"
+                        th:href="@{|/pizzas/delete/*{id}|}"
+                        class="btn btn-primary btn-sm"
+                        title="edit">Delete</a>
+            </td>
+
+        </tr>
+        <tr th:if="${list.isEmpty()}">
+            <td colspan="4">Sorry, there aren't pizzas available</td>
+        </tr>
+        </tbody>
+
+    </table>
+</div>
+
+
+
+</body>
+</html>

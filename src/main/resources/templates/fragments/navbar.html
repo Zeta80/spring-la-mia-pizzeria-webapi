@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary"
+     th:fragment="navbar">
+  <div class="container-fluid">
+    <a class="navbar-brand"  alt="logo">LOGO</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbar-content"
+            aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbar-content">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a th:href="@{/}" class="nav-link">PIZZE</a>
+        </li>
+        <li class="nav-item">
+          <a th:href="@{/ingredient}" class="nav-link" >CATEGORIE</a>
+        </li>
+      </ul>
+
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
+               name="q">
+        <button class="btn btn-outline-light" type="submit"><i
+                class="fa-solid fa-magnifying-glass"></i></button>
+      <form class="d-flex"
+            th:if="${showSearch}"
+            role="search"
+            method="get"
+            th:action="@{/pizzas}"
+      >
+        <!--colleghiamo il parametro del fragment all'attribute th:value dell'imput che si collegherà al model-->
+        <input name="q" th:value="${keyword}" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+</body>
+</html>

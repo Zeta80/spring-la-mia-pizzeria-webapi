@@ -1,5 +1,6 @@
 package org.lessons.pizzery.springlamiapizzeriacrud.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.NotEmpty;
@@ -30,6 +31,7 @@ public class Pizza {
     private Double prezzo;
     private LocalDateTime createdAt;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "pizza")
     private List<Offer> offers;
 

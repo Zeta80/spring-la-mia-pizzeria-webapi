@@ -77,7 +77,7 @@ public class PizzaRestController {
         }
     }
     @GetMapping("/{id}/offers")
-    public List<Offer> getBookBorrowings(@PathVariable("id") Integer pizzaId) {
+    public List<Offer> getPizzaBorrowings(@PathVariable("id") Integer pizzaId) {
         Pizza pizza = null;
         try {
             pizza = pizzaService.getById(pizzaId);

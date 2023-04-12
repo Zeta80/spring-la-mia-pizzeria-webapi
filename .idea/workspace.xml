@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c5744ddc-3bf4-4aaf-aef2-e7fc2bbb089e" name="Changes" comment="ADD api-mapping FINISH">
+    <list default="true" id="c5744ddc-3bf4-4aaf-aef2-e7fc2bbb089e" name="Changes" comment="ADJUST security filter for api">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lessons/pizzery/springlamiapizzeriacrud/security/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lessons/pizzery/springlamiapizzeriacrud/security/SecurityConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/lessons/pizzery/springlamiapizzeriacrud/api/PizzaRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lessons/pizzery/springlamiapizzeriacrud/api/PizzaRestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/lessons/pizzery/springlamiapizzeriacrud/service/PizzaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lessons/pizzery/springlamiapizzeriacrud/service/PizzaService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +45,7 @@
     </option>
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2NgmOv7RW3YnFdwxxo1ZgLnxuk1" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -274,7 +275,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681219707843</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="ADJUST security filter for api">
+      <created>1681303854542</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1681303854542</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -309,6 +317,7 @@
     <MESSAGE value="init" />
     <MESSAGE value="ADD api-mapping" />
     <MESSAGE value="ADD api-mapping FINISH" />
-    <option name="LAST_COMMIT_MESSAGE" value="ADD api-mapping FINISH" />
+    <MESSAGE value="ADJUST security filter for api" />
+    <option name="LAST_COMMIT_MESSAGE" value="ADJUST security filter for api" />
   </component>
 </project>

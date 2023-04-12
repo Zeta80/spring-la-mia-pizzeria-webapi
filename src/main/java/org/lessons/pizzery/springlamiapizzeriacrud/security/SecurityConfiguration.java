@@ -35,8 +35,13 @@ public class SecurityConfiguration {
     @Bean
     SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests()
-                .requestMatchers("/**")
-                .fullyAuthenticated()
+
+                .requestMatchers("/ingredients", "/ingredients/**").hasAuthority("ADMIN")
+                .requestMatchers("/offers/**").hasAuthority("ADMIN")
+                .requestMatchers("/pizzas/create", "/pizzas/edit/**", "/pizzas/delete/**").hasAuthority("ADMIN")
+                .requestMatchers("/", "/pizzas", "/pizzas/**").hasAnyAuthority("USER", "ADMIN")
+                .requestMatchers(HttpMethod.POST, "/pizzas/**").hasAuthority("ADMIN")
+                .requestMatchers("/**").permitAll()
                 .and().formLogin()
                 .and().logout()
                 .and().exceptionHandling();
